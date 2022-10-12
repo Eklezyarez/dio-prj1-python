@@ -23,3 +23,6 @@ def plot_histogram(image)
     color_lst = ['red', 'green', 'blue']
     for index, (ax, color) in enumerate(zip(axis, color_lst)):
         ax.set_title('{} histogram'.format(color.tittle()))
+        ax.hist(image[:, :, index].ravel(), bins = 256, color = color, alpha = 0.8)
+    fig.get_tight_layout()
+    plt.show()
